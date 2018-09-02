@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "9aa22e8e-20d8-4bd3-854c-47e204c7ac1d",
+		"name": "SP - Full Stack Engineer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Story #1 Create a friend connection between two email addresses.",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"friends\":[\"andy@example.com\",\"john@example.com\"]}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5002/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5002",
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Story #2 Retrieve the friends list for an email address",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"Andy@example.com\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5002/retrieve",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5002",
+					"path": [
+						"retrieve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Story #3 Retrieve the common friends list between two email addresses",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"friends\":[\"andy@example.com\",\"ace@example.com\"]}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5002/common",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5002",
+					"path": [
+						"common"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Story #4 Subscribe to updates from an email address",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"requestor\": \"common@example.com\",\"target\": \"john@example.com\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5002/subscribe",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5002",
+					"path": [
+						"subscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Story #5 Block updates from an email address",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"requestor\": \"andy@example.com\",\"target\": \"john@example.com\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5002/block",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5002",
+					"path": [
+						"block"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Story #6 Retrieve all email addresses that can receive updates from an email address",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sender\":  \"john@example.com\",\"text\": \"Hello World! kate@example.com\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5002/retrieveSubscriber",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5002",
+					"path": [
+						"retrieveSubscriber"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

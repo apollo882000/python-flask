@@ -1,0 +1,22 @@
+FROM centos:7
+
+MAINTAINER aws1d1 "aws1d1@hotmail.com"
+
+RUN yum -y update
+RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+RUN yum -y install python36u
+RUN yum -y install python-pip
+
+# We copy just the requirements.txt first to leverage Docker cache
+COPY ./req.python-flask.txt /app/req.python-flask.txt
+
+WORKDIR /app
+
+RUN pip install -r req.python-flask.txt
+
+COPY . /app
+
+EXPOSE 5002
+
+ENTRYPOINT [ "python" ]
+CMD [ "server.py" ]
